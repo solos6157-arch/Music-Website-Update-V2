@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111719"><title>NAKRI × OG — Music</title>
+<link rel="icon" href="assets/logo.png"><link rel="apple-touch-icon" href="assets/logo.png"><meta name="description" content="Listen to music from NAKRI x OG"><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar"><a class="brand" href="#"><img src="assets/logo.png" alt="NAKRI OG"><span>NAKRI <i>×</i> OG<small>MUSIC SPACE</small></span></a>
+<nav class="side-nav"><a class="active" href="#home"><span>⌂</span> Home</a><a href="#library"><span>◈</span> Discover</a><a href="#artists"><span>♙</span> Artists</a><a href="#library"><span>♫</span> Tracks</a><a href="#player"><span>☷</span> Player</a></nav>
+<div class="sidebar-bottom"><div class="side-avatar"><img src="assets/logo.png" alt=""></div><div><b>NAKRI × OG</b><small>Independent music</small></div></div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div class="top-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search songs, artists..." autocomplete="off"></div><div class="top-actions"><span class="status-dot"></span><span>LISTENING SPACE</span></div></header>
+<main id="home">
+<div class="dashboard">
+<div class="primary-column">
+<section class="featured"><div class="featured-copy"><span class="eyebrow">✦ &nbsp; ARTIST SPOTLIGHT</span><h1>Sound that<br><em>moves you.</em></h1><p>Discover your next favorite track in the NAKRI × OG collection.</p><a href="#library" class="primary-btn">Explore collection <b>↗</b></a></div><div class="featured-art"><div class="featured-disc"><img src="assets/logo.png" alt="NAKRI x OG"></div><span class="art-label">NAKRI <b>×</b> OG</span></div></section>
+<section id="artists" class="album-section"><div class="section-title"><div><span class="eyebrow">YOUR NEXT OBSESSION</span><h2>Artists & albums</h2></div><span class="section-hint">EXPLORE →</span></div><div id="artistGrid" class="artist-grid"></div></section>
+<section id="library" class="tracks-section"><div class="section-title"><div><span class="eyebrow">ON REPEAT</span><h2>Popular tracks</h2></div><span id="trackCount" class="track-count">0 TRACKS</span></div>
+<div class="filter-row"><select id="artistSelect" aria-label="Filter by artist"><option value="">All artists</option></select><select id="sortSelect" aria-label="Sort tracks"><option value="name">Title A–Z</option><option value="newest">Recently added</option></select></div>
+<div id="songGrid" class="song-grid"></div><div id="emptyState" class="empty-state" hidden><h3>No tracks found</h3><p>Try another title or artist.</p></div></section>
+</div>
+<aside class="right-column"><section class="trending"><div class="section-title compact"><h2>Trending artists</h2><a href="#artists">See all</a></div><div id="trendingArtists" class="trending-list"></div></section>
+<section class="genres"><div class="section-title compact"><h2>Explore moods</h2></div><div class="genre-pills"><button data-query="hip hop">Hip-hop</button><button data-query="pop">Pop</button><button data-query="love">Love</button><button data-query="remix">Remix</button><button data-query="official">Official</button><button data-query="khmer">Khmer</button></div></section>
+<section class="now-card"><div class="section-title compact"><h2>Now playing</h2><span class="playing-indicator">● LIVE</span></div><div class="now-art" id="nowArt"><span>♫</span></div><div class="now-info"><strong id="nowTitle">Choose a track</strong><span id="nowArtist">NAKRI × OG</span></div><div class="side-progress"><span id="sideCurrent">0:00</span><input id="sideSeek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="sideDuration">0:00</span></div><div class="side-controls"><button id="sidePrev" aria-label="Previous">|‹</button><button id="sidePlay" class="side-play" aria-label="Play">▶</button><button id="sideNext" aria-label="Next">›|</button><button id="sideRepeat" aria-label="Repeat" title="Repeat">↻</button></div><div class="side-download"><a id="sideDownload" href="#" download>↓ Download track</a><button id="sideView">Full player ↗</button></div></section>
+</aside></div>
+<footer><span>NAKRI <b>×</b> OG · MUSIC FOR EVERY MOOD</span><span id="year"></span></footer>
+</main></div>
+<div class="player" id="player"><div class="now-playing"><div class="mini-cover" id="miniCover">♫</div><div class="now-text"><strong id="barTitle">Choose a track</strong><span id="barArtist">NAKRI × OG</span></div></div>
+<div class="player-controls"><div class="control-buttons"><button id="prevBtn" aria-label="Previous">|‹</button><button id="playBtn" class="play-button" aria-label="Play">▶</button><button id="nextBtn" aria-label="Next">›|</button></div><div class="timeline"><span id="currentTime">0:00</span><input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="duration">0:00</span></div></div>
+<div class="volume-wrap"><button id="repeatBtn" class="utility-btn" title="Repeat off">↻</button><button id="viewBtn" class="utility-btn view-btn">FULL PLAYER</button><a id="downloadBtn" class="utility-btn download-btn" href="#" download>↓</a><span>VOL</span><input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div><audio id="audio" preload="metadata"></audio></div>
+<section id="listenView" class="listen-view" aria-hidden="true"><button id="closeViewBtn" class="close-view">×</button><div class="listen-layout"><div class="listen-art" id="listenArt"><span>♫</span></div><div class="listen-info"><div class="eyebrow">NOW PLAYING</div><h2 id="listenTitle">Choose a track</h2><p id="listenArtist">NAKRI × OG</p><div class="listen-progress"><span id="viewCurrentTime">0:00</span><input id="viewSeekBar" type="range" min="0" max="1000" value="0"><span id="viewDuration">0:00</span></div><div class="listen-actions"><button id="viewPrevBtn">|‹</button><button id="viewPlayBtn" class="view-play">▶</button><button id="viewNextBtn">›|</button><button id="viewRepeatBtn">↻</button><a id="viewDownloadBtn" href="#" download>↓ DOWNLOAD</a></div></div></div></section>
+<script src="app.js"></script></body></html>
